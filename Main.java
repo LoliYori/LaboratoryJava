@@ -158,11 +158,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.print("Введите номер задачи: ");
-            int task = scanner.nextInt();
+            System.out.print("Выберите номер задачи (1-20) или 0 для выхода: ");
+            int task;
+            try {
+                task = Integer.parseInt(scanner.next());
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: введите цифру.");
+                continue;
+            }
 
             if (task == 0) {
-                System.out.println("Завершение программы...");
+                System.out.println("Выход из программы.");
                 break;
             }
 
